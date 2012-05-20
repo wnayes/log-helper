@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay [
+  <!ENTITY % eloghelperDTD SYSTEM "chrome://log-helper/locale/helper.dtd">
+  %eloghelperDTD;
+]>
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         id="eLogHelper_overlay">
+  <script id="eLogHelper_script" type="application/x-javascript" 
+          src="chrome://log-helper/content/helper.js" />
+  <!-- Using privacy.js for the openLogFolder() method -->
+  <script type="application/javascript" 
+          src="chrome://instantbird/content/preferences/privacy.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="eLogHelper-bundle" 
+                  src="chrome://log-helper/locale/helper.properties"/>
+  </stringbundleset>
+
+  <commandset id="logsCommands">
+    <command id="eLogHelper_cmd_openLogsFolder" 
+             oncommand="gPrivacyPane.openLogFolder();"/>
+    <command id="eLogHelper_cmd_openCurrentLogFolder" 
+             oncommand="eLogHelper.openCurrentLogFolder();"/>
+    <command id="eLogHelper_cmd_showJson" oncommand="eLogHelper.showJSON();"/>
+    <command id="eLogHelper_cmd_deleteLog" oncommand="eLogHelper.deleteLog();"/>
+  </commandset>
+
+  <popupset id="mainPopupSet">
+    <menupopup id="eLogHelper_popup">
+      <menuitem id="eLogHelper_showJson_item"
+                label="&showJson.label;"
+                command="eLogHelper_cmd_showJson"/>
+      <menuitem id="eLogHelper_deleteLog_item"
+                label="&deleteLog.label;"
+                command="eLogHelper_cmd_deleteLog"/>
+      <menuseparator/>
+      <menuitem id="eLogHelper_openLogsFolder_item"
+                label="&openMainLogsDirectory.label;"
+                command="eLogHelper_cmd_openLogsFolder"/>
+      <menuitem id="eLogHelper_openCurrentLogFolder_item"
+                label="&openCurrentLogDirectory.label;"
+                command="eLogHelper_cmd_openCurrentLogFolder"/>
+    </menupopup>
+  </popupset>
+
+  <listbox id="logList" context="eLogHelper_popup"/>
+
+</overlay>

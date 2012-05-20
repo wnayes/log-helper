@@ -1,0 +1,4 @@
+<!ENTITY openMainLogsDirectory.label "Open Main Logs Directory">
+<!ENTITY openCurrentLogDirectory.label "Open Directory of Current Log">
+<!ENTITY showJson.label "Show JSON">
+<!ENTITY deleteLog.label "Delete Log">

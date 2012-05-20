@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+ <Description rdf:about="urn:mozilla:install-manifest">
+   <em:id>{338e0b96-2285-4424-b4c8-e25560750fa3}</em:id>
+   <em:name>Log Helper</em:name>
+   <em:version>1.0</em:version>
+   <em:creator>Will Nayes</em:creator>
+   <em:description>Adds a helpful context menu in the log viewer.</em:description>
+   <em:homepageURL>http://www.tc.umn.edu/~nayes006/</em:homepageURL>
+
+	<!-- Instantbird -->
+	<em:targetApplication>
+		<Description>
+			<em:id>{33cb9019-c295-46dd-be21-8c4936574bee}</em:id>
+			<em:minVersion>1.2a1pre</em:minVersion>
+			<em:maxVersion>1.2a1pre</em:maxVersion>
+		</Description>
+	</em:targetApplication>   
+  </Description>
+</RDF>
